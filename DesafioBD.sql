@@ -21,6 +21,7 @@ data_nascimento DATE NOT NULL UNIQUE
 CREATE TABLE fazenda (
 id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 nome VARCHAR(250) NOT NULL UNIQUE,
+rua VARCHAR(250) NOT NULL UNIQUE,
 complemento VARCHAR(100) NOT NULL UNIQUE,
 hectares DOUBLE NOT NULL UNIQUE,
 cep INT(7) NOT NULL UNIQUE
@@ -37,3 +38,9 @@ INSERT INTO animal(marcacao, brinco_identificacao, data_nascimento) VALUE ('STM'
 INSERT INTO animal(marcacao, brinco_identificacao, data_nascimento) VALUE ('MTS', '5894', '1980-09-20');
 INSERT INTO animal(marcacao, brinco_identificacao, data_nascimento) VALUE ('TSM', '9658', '1980-08-10');
 SELECT marcacao, brinco_identificacao, data_nascimento FROM animal;
+
+/* INSERTS TABELA FAZENDA */
+INSERT INTO fazenda(nome, rua, complemento, hectares, cep) VALUE ('Fazenda Santa Matilda', 'Avenida João Alexandre', 'Primeira porteira a esquerda da arvore grande', '78', '52669');
+INSERT INTO fazenda(nome, rua, complemento, hectares, cep) VALUE ('Fazenda Roça', 'Avenida Tome Souza', 'Perto da fabrica de canudo', '120', '98654');
+INSERT INTO fazenda(nome, rua, complemento, hectares, cep) VALUE ('Fazenda Constantinople', 'Rua Cobalto', 'Proximo ao mercado santana', '250', '32148');
+SELECT nome, rua, complemento, hectares, cep FROM fazenda;
