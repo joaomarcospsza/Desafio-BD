@@ -48,24 +48,28 @@ FOREIGN KEY(fazenda_id) REFERENCES fazenda(id)
 );
 
 /* INSERTS TABELA ESTADO */
-INSERT INTO estado() VALUE ();
+INSERT INTO estado(nome, uf) VALUE ('Paraná', 'PR');
+INSERT INTO estado(nome, uf) VALUE ('Mato Grosso', 'MT');
+INSERT INTO estado(nome, uf) VALUE ('Goiás', 'GO');
 SELECT * FROM estado;
 
 /* INSERTS TABELA CIDADE */
-INSERT INTO estado() VALUE ();
-SELECT * FROM estado;
+INSERT INTO cidade(nome, estado_id) VALUE ('Paranavaí', '1');
+INSERT INTO cidade(nome, estado_id) VALUE ('Cuiabá', '2');
+INSERT INTO cidade(nome, estado_id) VALUE ('Goiás', '3');
+SELECT * FROM cidade;
 
 /* INSERTS TABELA FAZENDA */
-INSERT INTO fazenda(nome, rua, complemento, hectares, cep, cidade) VALUE ('Fazenda Santa Matilda', 'Avenida João Alexandre', 'Primeira porteira a esquerda da arvore grande', '78', '52669', '1');
-INSERT INTO fazenda(nome, rua, complemento, hectares, cep, cidade) VALUE ('Fazenda Roça', 'Avenida Tome Souza', 'Perto da fabrica de canudo', '120', '98654', '2');
-INSERT INTO fazenda(nome, rua, complemento, hectares, cep, cidade) VALUE ('Fazenda Constantinople', 'Rua Cobalto', 'Proximo ao mercado santana', '250', '32148', '3');
-SELECT nome, rua, complemento, hectares, cep, cidade FROM fazenda;
+INSERT INTO fazenda(nome, rua, complemento, hectares, cep, cidade_id) VALUE ('Fazenda Santa Matilda', 'Avenida João Alexandre', 'Primeira porteira a esquerda da arvore grande', '78', '52669', '1');
+INSERT INTO fazenda(nome, rua, complemento, hectares, cep, cidade_id) VALUE ('Fazenda Roça', 'Avenida Tome Souza', 'Perto da fabrica de canudo', '120', '98654', '2');
+INSERT INTO fazenda(nome, rua, complemento, hectares, cep, cidade_id) VALUE ('Fazenda Constantinople', 'Rua Cobalto', 'Proximo ao mercado santana', '250', '32148', '3');
+SELECT nome, rua, complemento, hectares, cep, cidade_id FROM fazenda;
 
 /* INSERTS TABELA PESSOA */
-INSERT INTO pessoa(nome, cpf, data_nascimento, endereco, fazenda_id) VALUE ('João Marcos', '859654987', '1999-04-06', 'Rua Tome Souza', '1');
-INSERT INTO pessoa(nome, cpf, data_nascimento, endereco, fazenda_id) VALUE ('Marcos', '589674589', '1999-05-04', 'Rua Janta', '2');
-INSERT INTO pessoa(nome, cpf, data_nascimento, endereco, fazenda_id) VALUE ('Souza Rubinho', '896214589', '1999-09-22', 'Avenida Alagoinha', '3');
-SELECT nome, cpf, data_nascimento, endereco, fazenda_id FROM pessoa;
+INSERT INTO pessoa(nome, cpf, data_nascimento, endereco, fazenda_id, cidade_id) VALUE ('João Marcos', '859654987', '1999-04-06', 'Rua Tome Souza', '1', '1');
+INSERT INTO pessoa(nome, cpf, data_nascimento, endereco, fazenda_id, cidade_id) VALUE ('Marcos', '589674589', '1999-05-04', 'Rua Janta', '2', '2');
+INSERT INTO pessoa(nome, cpf, data_nascimento, endereco, fazenda_id, cidade_id) VALUE ('Souza Rubinho', '896214589', '1999-09-22', 'Avenida Alagoinha', '3', '3');
+SELECT nome, cpf, data_nascimento, endereco, fazenda_id, cidade_id FROM pessoa;
 
 /* INSERTS TABELA ANIMAL */
 INSERT INTO animal(marcacao, brinco_identificacao, data_nascimento, fazenda_id) VALUE ('STM', '8598', '1980-10-06', '1');
