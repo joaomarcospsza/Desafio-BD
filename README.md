@@ -1,1 +1,3 @@
-# Desafios passados nos finais de aulas sobre Banco de Dados
+Aulas de SQL - 1º ANO - Engenharia de Software
+
+Desafios propostos nos finais de cada aula.
